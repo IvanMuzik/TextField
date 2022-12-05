@@ -22,9 +22,9 @@ class ViewController: UIViewController {
 
     @IBAction func enterButtonAction(_ sender: UIButton) {
         if loginTextfield.text == login && passwordTextField.text == password {
-            
-        }
+            if let vc2 = storyboard?.instantiateViewController(withIdentifier: "VC2") as? VC2{
+                present(vc2, animated: true)
+            }
     }
-    
 }
-
+}
