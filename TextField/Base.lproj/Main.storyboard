@@ -55,6 +55,7 @@
                     <connections>
                         <outlet property="loginTextfield" destination="zWC-ED-OFr" id="Ben-uQ-Ms6"/>
                         <outlet property="passwordTextField" destination="rjM-R8-Ogv" id="TLO-bJ-1TA"/>
+                        <segue destination="vuL-uH-cTH" kind="show" identifier="add" id="qYe-eB-ntU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -70,22 +71,22 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="34" translatesAutoresizingMaskIntoConstraints="NO" id="ugl-KG-hwF">
-                                <rect key="frame" x="77" y="132" width="260" height="170"/>
+                                <rect key="frame" x="77" y="176" width="260" height="170"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8a8-XO-rIN">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8a8-XO-rIN">
                                         <rect key="frame" x="0.0" y="0.0" width="260" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcd-cQ-NaN">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zcd-cQ-NaN">
                                         <rect key="frame" x="0.0" y="68" width="260" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                     </textField>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXe-WT-Wz2">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dXe-WT-Wz2">
                                         <rect key="frame" x="0.0" y="136" width="260" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -96,9 +97,14 @@
                             <constraint firstItem="UzN-az-1JW" firstAttribute="trailing" secondItem="ugl-KG-hwF" secondAttribute="trailing" constant="77" id="1Tn-A9-K3t"/>
                             <constraint firstItem="ugl-KG-hwF" firstAttribute="leading" secondItem="UzN-az-1JW" secondAttribute="leading" constant="77" id="bFA-7s-ikS"/>
                             <constraint firstItem="ugl-KG-hwF" firstAttribute="top" secondItem="UzN-az-1JW" secondAttribute="top" constant="88" id="lE3-SP-hKm"/>
-                            <constraint firstItem="UzN-az-1JW" firstAttribute="bottom" secondItem="ugl-KG-hwF" secondAttribute="bottom" constant="560" id="pKi-qs-aHV"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Xjk-Dn-7lF"/>
+                    <connections>
+                        <outlet property="emailTextField" destination="zcd-cQ-NaN" id="LMo-bv-DYO"/>
+                        <outlet property="nameTextField" destination="8a8-XO-rIN" id="adJ-Z7-rpb"/>
+                        <outlet property="numTelTextField" destination="dXe-WT-Wz2" id="3sL-RN-uma"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fg-gb-NKj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

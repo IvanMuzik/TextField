@@ -17,14 +17,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        title = "registration"
+        
     }
 
     @IBAction func enterButtonAction(_ sender: UIButton) {
         if loginTextfield.text == login && passwordTextField.text == password {
-            if let vc2 = storyboard?.instantiateViewController(withIdentifier: "VC2") as? VC2{
-                present(vc2, animated: true)
+            let vc2 = storyboard?.instantiateViewController(withIdentifier: "VC2") as! VC2
+            navigationController?.pushViewController(vc2, animated: true)
             }
     }
 }
-}
+
+
