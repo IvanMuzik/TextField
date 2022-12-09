@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var loginTextfield: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -15,11 +15,26 @@ class ViewController: UIViewController {
     let login = "I"
     let password = "1"
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "registration"
-        
+    
+        loginTextfield.delegate = self
+        passwordTextField.delegate = self
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == loginTextfield {
+            textField.resignFirstResponder()
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            textField.resignFirstResponder()
+        }
+        return true
+    }
+    
 
     @IBAction func enterButtonAction(_ sender: UIButton) {
         if loginTextfield.text == login && passwordTextField.text == password {

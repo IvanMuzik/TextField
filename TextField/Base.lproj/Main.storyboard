@@ -90,20 +90,72 @@
                                     </textField>
                                 </subviews>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tTR-lH-7Lj">
+                                <rect key="frame" x="132" y="750" width="150" height="31"/>
+                                <color key="backgroundColor" systemColor="systemRedColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Ok"/>
+                                <connections>
+                                    <action selector="buttonAction:" destination="vuL-uH-cTH" eventType="touchUpInside" id="HFN-Qs-w1V"/>
+                                </connections>
+                            </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ixt-QI-vdI">
+                                <rect key="frame" x="290" y="637" width="51" height="31"/>
+                                <connections>
+                                    <action selector="onOffButtonAction:" destination="vuL-uH-cTH" eventType="valueChanged" id="60H-q5-1xc"/>
+                                </connections>
+                            </switch>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MKt-Hl-irr">
+                                <rect key="frame" x="290" y="576" width="51" height="31"/>
+                                <connections>
+                                    <action selector="hiddenButtonAction:" destination="vuL-uH-cTH" eventType="valueChanged" id="CSj-DU-zPX"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Скрыть кнопку" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ov-NH-l8c">
+                                <rect key="frame" x="77" y="576" width="171" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Вкл./Выкл Кнопку " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsP-PC-heW">
+                                <rect key="frame" x="77" y="637" width="171" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="UzN-az-1JW"/>
                         <color key="backgroundColor" systemColor="systemCyanColor"/>
                         <constraints>
+                            <constraint firstItem="4Ov-NH-l8c" firstAttribute="trailing" secondItem="lsP-PC-heW" secondAttribute="trailing" id="152-Xa-RbD"/>
                             <constraint firstItem="UzN-az-1JW" firstAttribute="trailing" secondItem="ugl-KG-hwF" secondAttribute="trailing" constant="77" id="1Tn-A9-K3t"/>
+                            <constraint firstItem="4Ov-NH-l8c" firstAttribute="leading" secondItem="lsP-PC-heW" secondAttribute="leading" id="6N4-rD-xel"/>
+                            <constraint firstItem="4Ov-NH-l8c" firstAttribute="top" secondItem="MKt-Hl-irr" secondAttribute="top" id="Inn-CH-6lA"/>
+                            <constraint firstItem="lsP-PC-heW" firstAttribute="top" secondItem="ixt-QI-vdI" secondAttribute="top" id="KD8-XK-Sci"/>
+                            <constraint firstItem="lsP-PC-heW" firstAttribute="top" secondItem="4Ov-NH-l8c" secondAttribute="bottom" constant="30" id="OBH-ml-Ohr"/>
+                            <constraint firstItem="UzN-az-1JW" firstAttribute="bottom" secondItem="tTR-lH-7Lj" secondAttribute="bottom" constant="81" id="Qib-sn-4AE"/>
+                            <constraint firstItem="UzN-az-1JW" firstAttribute="trailing" secondItem="MKt-Hl-irr" secondAttribute="trailing" constant="75" id="SHD-0f-GCr"/>
+                            <constraint firstItem="MKt-Hl-irr" firstAttribute="leading" secondItem="ixt-QI-vdI" secondAttribute="leading" id="Uvn-CT-0DL"/>
+                            <constraint firstItem="tTR-lH-7Lj" firstAttribute="top" secondItem="lsP-PC-heW" secondAttribute="bottom" constant="82" id="W7b-oR-Hym"/>
                             <constraint firstItem="ugl-KG-hwF" firstAttribute="leading" secondItem="UzN-az-1JW" secondAttribute="leading" constant="77" id="bFA-7s-ikS"/>
+                            <constraint firstItem="4Ov-NH-l8c" firstAttribute="leading" secondItem="ugl-KG-hwF" secondAttribute="leading" id="fWO-c8-jAg"/>
+                            <constraint firstItem="tTR-lH-7Lj" firstAttribute="centerX" secondItem="ugl-KG-hwF" secondAttribute="centerX" id="gyw-XO-bfh"/>
+                            <constraint firstItem="lsP-PC-heW" firstAttribute="bottom" secondItem="ixt-QI-vdI" secondAttribute="bottom" id="kat-Ox-o4D"/>
                             <constraint firstItem="ugl-KG-hwF" firstAttribute="top" secondItem="UzN-az-1JW" secondAttribute="top" constant="88" id="lE3-SP-hKm"/>
+                            <constraint firstItem="4Ov-NH-l8c" firstAttribute="bottom" secondItem="MKt-Hl-irr" secondAttribute="bottom" id="lwb-Dm-qjd"/>
+                            <constraint firstItem="MKt-Hl-irr" firstAttribute="leading" secondItem="4Ov-NH-l8c" secondAttribute="trailing" constant="42" id="sKR-0z-4Zp"/>
+                            <constraint firstItem="tTR-lH-7Lj" firstAttribute="leading" secondItem="UzN-az-1JW" secondAttribute="leading" constant="132" id="yHZ-QU-yuu"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xjk-Dn-7lF"/>
                     <connections>
+                        <outlet property="buttonOutlet" destination="tTR-lH-7Lj" id="tAv-Gx-HrO"/>
                         <outlet property="emailTextField" destination="zcd-cQ-NaN" id="LMo-bv-DYO"/>
+                        <outlet property="hiddenButtonSwichOutlet" destination="MKt-Hl-irr" id="BBj-kD-zvI"/>
                         <outlet property="nameTextField" destination="8a8-XO-rIN" id="adJ-Z7-rpb"/>
                         <outlet property="numTelTextField" destination="dXe-WT-Wz2" id="3sL-RN-uma"/>
+                        <outlet property="onOffButtonOutlet" destination="ixt-QI-vdI" id="yup-dq-3dO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fg-gb-NKj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -135,6 +187,9 @@
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="tertiarySystemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

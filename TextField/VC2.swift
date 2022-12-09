@@ -13,6 +13,9 @@ class VC2: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var numTelTextField: UITextField!
+    @IBOutlet weak var hiddenButtonSwichOutlet: UISwitch!
+    @IBOutlet weak var onOffButtonOutlet: UISwitch!
+    @IBOutlet weak var buttonOutlet: UIButton!
     
     
     
@@ -23,6 +26,9 @@ class VC2: UIViewController, UITextFieldDelegate {
         nameTextField.delegate = self
         emailTextField.delegate = self
         numTelTextField.delegate = self
+        
+        self.hiddenButtonSwichOutlet.isOn = false
+        self.onOffButtonOutlet.isOn = false
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -39,6 +45,23 @@ class VC2: UIViewController, UITextFieldDelegate {
         return true
     }
 
-
-
+    @IBAction func hiddenButtonAction(_ sender: UISwitch) {
+        if sender.isOn{
+        buttonOutlet.isHidden = true
+        } else {
+            buttonOutlet.isHidden = false
+        }
+    }
+    @IBAction func onOffButtonAction(_ sender: UISwitch) {
+        if sender.isOn{
+            buttonOutlet.isEnabled = true
+        } else {
+            buttonOutlet.isEnabled = false
+        }
+    }
+    
+    @IBAction func buttonAction(_ sender: UIButton) {
+    }
+    
 }
+
