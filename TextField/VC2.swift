@@ -7,7 +7,7 @@
 
 import UIKit
 
-class VC2: UIViewController {
+class VC2: UIViewController, UITextFieldDelegate {
 
     
     @IBOutlet weak var nameTextField: UITextField!
@@ -15,13 +15,30 @@ class VC2: UIViewController {
     @IBOutlet weak var numTelTextField: UITextField!
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "VC2"
-        // Do any additional setup after loading the view.
+        
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        numTelTextField.delegate = self
     }
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField{
+            textField.resignFirstResponder()
+            emailTextField.becomeFirstResponder()
+        } else if textField == emailTextField {
+            textField.resignFirstResponder()
+            numTelTextField.becomeFirstResponder()
+        }else if textField == numTelTextField{
+            textField.resignFirstResponder()
+        }
+        
+        return true
+    }
 
-//    Он вызывает textFieldShouldReturn(_:)метод, когда пользователь нажимает кнопку возврата на клавиатуре.
+
 
 }
