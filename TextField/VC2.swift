@@ -7,8 +7,9 @@
 
 import UIKit
 
-class VC2: UIViewController, UITextFieldDelegate {
-
+class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    var emailUser = ["@gmail.com", "@mail.ru", "@yandex.ru"]
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -17,7 +18,7 @@ class VC2: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var onOffButtonOutlet: UISwitch!
     @IBOutlet weak var buttonOutlet: UIButton!
     
-    
+    let pickerEmail = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,8 @@ class VC2: UIViewController, UITextFieldDelegate {
         
         self.hiddenButtonSwichOutlet.isOn = false
         self.onOffButtonOutlet.isOn = false
+        
+        nameTextField.addTarget(self, action: #selector(alertNameUser), for: .allEvents)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -44,6 +47,20 @@ class VC2: UIViewController, UITextFieldDelegate {
         
         return true
     }
+    @objc func alertNameUser() {
+        
+        let alert = UIAlertController(title: "Введите свое имя", message: nil, preferredStyle: .alert)
+        let actionAlert = UIAlertAction(title: "Ok", style: .default) {action in
+            let tf = alert.textFields?.first
+            self.nameTextField.text = tf?.text
+            
+        }
+        alert.addTextField()
+        alert.addAction(actionAlert)
+        present(alert, animated: true)
+        }
+    
+    
 
     @IBAction func hiddenButtonAction(_ sender: UISwitch) {
         if sender.isOn{
@@ -63,5 +80,12 @@ class VC2: UIViewController, UITextFieldDelegate {
     @IBAction func buttonAction(_ sender: UIButton) {
     }
     
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return emailUser.count
+    }
 }
 
