@@ -76,7 +76,7 @@ class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicker
             buttonOutlet.isEnabled = false
         }
     }
-    // com
+    // proba
     
     @IBAction func buttonAction(_ sender: UIButton) {
     }
