@@ -10,6 +10,7 @@ import UIKit
 class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var emailUser = ["@gmail.com", "@mail.ru", "@yandex.ru"]
+    var numberTel = ["7703946", "8146793", "6143632"]
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -19,6 +20,7 @@ class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicker
     @IBOutlet weak var buttonOutlet: UIButton!
     
     let pickerEmail = UIPickerView()
+    let pickerNumTel = UIPickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +31,11 @@ class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicker
         numTelTextField.delegate = self
         pickerEmail.delegate = self
         pickerEmail.dataSource = self
+        pickerNumTel.dataSource = self
+        pickerNumTel.delegate = self
         
         emailTextField.inputView = pickerEmail
+        numTelTextField.inputView = pickerNumTel
         
         self.hiddenButtonSwichOutlet.isOn = false
         self.onOffButtonOutlet.isOn = false
@@ -79,7 +84,6 @@ class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicker
             buttonOutlet.isEnabled = false
         }
     }
-    // proba
     
     @IBAction func buttonAction(_ sender: UIButton) {
     }
@@ -89,16 +93,33 @@ class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicker
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return emailUser.count
+        var pik = 0
+        if pickerView == pickerEmail{
+            pik = emailUser.count
+        } else if pickerView == pickerNumTel{
+            pik = numberTel.count
+        }
+        return pik
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return emailUser[row]
+        var pik = ""
+        if pickerView == pickerEmail{
+            pik = emailUser[row]
+        }else if pickerView == pickerNumTel{
+            pik = numberTel[row]
+        }
+        return pik
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == pickerEmail{
         emailTextField.text = emailUser[row]
         emailTextField.resignFirstResponder()
-    }
+        } else if pickerView == pickerNumTel{
+            numTelTextField.text = numberTel[row]
+            numTelTextField.resignFirstResponder()
+        }
 }
 
+}
