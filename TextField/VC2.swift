@@ -27,10 +27,13 @@ class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicker
         nameTextField.delegate = self
         emailTextField.delegate = self
         numTelTextField.delegate = self
+        pickerEmail.delegate = self
+        pickerEmail.dataSource = self
+        
+        emailTextField.inputView = pickerEmail
         
         self.hiddenButtonSwichOutlet.isOn = false
         self.onOffButtonOutlet.isOn = false
-        
         nameTextField.addTarget(self, action: #selector(alertNameUser), for: .allEvents)
     }
     
@@ -87,6 +90,15 @@ class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicker
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return emailUser.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return emailUser[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        emailTextField.text = emailUser[row]
+        emailTextField.resignFirstResponder()
     }
 }
 
