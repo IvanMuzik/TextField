@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xdF-bg-jNp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vuL-uH-cTH">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -11,7 +11,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TextField" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="VC1" id="BYZ-38-t0r" customClass="ViewController" customModule="TextField" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,11 +156,83 @@
                         <outlet property="nameTextField" destination="8a8-XO-rIN" id="adJ-Z7-rpb"/>
                         <outlet property="numTelTextField" destination="dXe-WT-Wz2" id="3sL-RN-uma"/>
                         <outlet property="onOffButtonOutlet" destination="ixt-QI-vdI" id="yup-dq-3dO"/>
+                        <segue destination="zle-py-eQh" kind="showDetail" id="Z8N-MR-puN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fg-gb-NKj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1562.3188405797102" y="107.8125"/>
+        </scene>
+        <!--VC3-->
+        <scene sceneID="W2U-vP-iYx">
+            <objects>
+                <viewController storyboardIdentifier="VC3" modalPresentationStyle="fullScreen" id="zle-py-eQh" customClass="VC3" customModule="TextField" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hX0-GH-g4J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="6ra-hV-VzB">
+                                <rect key="frame" x="77" y="776" width="260" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ScH-NS-yhD"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentControl:" destination="zle-py-eQh" eventType="valueChanged" id="jKn-lb-nrc"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYs-TU-2PF">
+                                <rect key="frame" x="87" y="328" width="240" height="240"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U1d-Sf-ezN">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="240"/>
+                                    </pickerView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="U1d-Sf-ezN" firstAttribute="top" secondItem="mYs-TU-2PF" secondAttribute="top" id="5Wm-Kn-zpv"/>
+                                    <constraint firstItem="U1d-Sf-ezN" firstAttribute="centerY" secondItem="mYs-TU-2PF" secondAttribute="centerY" id="LcN-hG-6gd"/>
+                                    <constraint firstItem="U1d-Sf-ezN" firstAttribute="leading" secondItem="mYs-TU-2PF" secondAttribute="leading" id="Z39-Cl-Rf8"/>
+                                    <constraint firstItem="U1d-Sf-ezN" firstAttribute="centerX" secondItem="mYs-TU-2PF" secondAttribute="centerX" id="aVp-IG-bav"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbQ-ca-L0P">
+                                <rect key="frame" x="152" y="91" width="110" height="31"/>
+                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Back"/>
+                                <connections>
+                                    <action selector="buttonBackAction:" destination="zle-py-eQh" eventType="touchUpInside" id="fvf-hW-fj8"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="nzR-qh-vY2"/>
+                        <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                        <constraints>
+                            <constraint firstItem="mYs-TU-2PF" firstAttribute="centerX" secondItem="6ra-hV-VzB" secondAttribute="centerX" id="5I9-5k-jDU"/>
+                            <constraint firstItem="nzR-qh-vY2" firstAttribute="bottom" secondItem="6ra-hV-VzB" secondAttribute="bottom" constant="56" id="7PM-8f-DcX"/>
+                            <constraint firstItem="6ra-hV-VzB" firstAttribute="leading" secondItem="nzR-qh-vY2" secondAttribute="leading" constant="77" id="9tS-2d-rSn"/>
+                            <constraint firstItem="gbQ-ca-L0P" firstAttribute="top" secondItem="nzR-qh-vY2" secondAttribute="top" constant="47" id="A0c-ir-Vpo"/>
+                            <constraint firstItem="mYs-TU-2PF" firstAttribute="leading" secondItem="nzR-qh-vY2" secondAttribute="leading" constant="87" id="Ib8-hj-FAs"/>
+                            <constraint firstItem="gbQ-ca-L0P" firstAttribute="leading" secondItem="nzR-qh-vY2" secondAttribute="leading" constant="152" id="OtC-jF-U9s"/>
+                            <constraint firstItem="gbQ-ca-L0P" firstAttribute="centerX" secondItem="hX0-GH-g4J" secondAttribute="centerX" id="Q3M-ro-GxC"/>
+                            <constraint firstItem="gbQ-ca-L0P" firstAttribute="centerX" secondItem="mYs-TU-2PF" secondAttribute="centerX" id="XtU-s0-Kxt"/>
+                            <constraint firstItem="mYs-TU-2PF" firstAttribute="top" secondItem="hX0-GH-g4J" secondAttribute="top" constant="328" id="iGA-Kp-Xat"/>
+                            <constraint firstItem="mYs-TU-2PF" firstAttribute="centerY" secondItem="hX0-GH-g4J" secondAttribute="centerY" id="lGY-y2-d0M"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buttonBackOutlet" destination="gbQ-ca-L0P" id="rre-aY-kwg"/>
+                        <outlet property="pickerColor" destination="U1d-Sf-ezN" id="8I3-5N-rqU"/>
+                        <outlet property="viewColorOutlet" destination="mYs-TU-2PF" id="3cA-Jc-M9H"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iU0-X1-GAf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2321.739130434783" y="107.8125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="6va-6b-ZVP">
@@ -182,8 +254,17 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemCyanColor">
             <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -86,6 +86,9 @@ class VC2: UIViewController, UITextFieldDelegate, UIPickerViewDelegate, UIPicker
     }
     
     @IBAction func buttonAction(_ sender: UIButton) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "VC3"){
+        present(vc, animated: true)
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
