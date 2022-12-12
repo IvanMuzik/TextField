@@ -21,6 +21,8 @@ class VC3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewColorOutlet.layer.cornerRadius = 100
+        pickerColor.dataSource = self
+        pickerColor.delegate = self
        
     }
     
@@ -48,7 +50,9 @@ class VC3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         return m
     }
     
-//    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-//        <#code#>
-//    }
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if pickerView == pickerColor{
+            view.backgroundColor = colorView[row].1
+        }
+    }
 }
