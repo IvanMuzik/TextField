@@ -11,9 +11,12 @@ class VC3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
    
     
 
+    @IBOutlet weak var imageOUtlet: UIImageView!
+    @IBOutlet weak var sliderOutlet: UISlider!
     @IBOutlet weak var buttonBackOutlet: UIButton!
     @IBOutlet weak var pickerColor: UIPickerView!
     @IBOutlet weak var viewColorOutlet: UIView!
+    @IBOutlet weak var segCont: UISegmentedControl!
     
     let colorView: [(String, UIColor)] = [("Red",UIColor.red), ("Blue", .blue), ("Green", .green), ("Gray", .gray)]
     
@@ -24,6 +27,13 @@ class VC3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         pickerColor.dataSource = self
         pickerColor.delegate = self
        
+        imageOUtlet.isHidden = true
+        sliderOutlet.isHidden = true
+        imageOUtlet.image = UIImage(named: "swift")
+        view.addSubview(imageOUtlet)
+        
+    }
+    @IBAction func sliderAction(_ sender: UISlider) {
     }
     
     @IBAction func buttonBackAction(_ sender: UIButton) {
@@ -32,6 +42,18 @@ class VC3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     @IBAction func segmentControl(_ sender: UISegmentedControl) {
+        if sender.selectedSegmentIndex == 0{
+            imageOUtlet.isHidden = true
+            sliderOutlet.isHidden = true
+            pickerColor.isHidden = false
+            viewColorOutlet.isHidden = false
+            
+        }else if sender.selectedSegmentIndex == 1{
+            pickerColor.isHidden = true
+            viewColorOutlet.isHidden = true
+            imageOUtlet.isHidden = false
+            sliderOutlet.isHidden = false
+        }
     }
  
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

@@ -208,25 +208,47 @@
                                     <action selector="buttonBackAction:" destination="zle-py-eQh" eventType="touchUpInside" id="fvf-hW-fj8"/>
                                 </connections>
                             </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yn9-qC-2yM">
+                                <rect key="frame" x="81" y="677" width="252" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="fI6-d4-j3U"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="sliderAction:" destination="zle-py-eQh" eventType="valueChanged" id="lwZ-bz-39V"/>
+                                </connections>
+                            </slider>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="swift" translatesAutoresizingMaskIntoConstraints="NO" id="sLa-4x-Q7g">
+                                <rect key="frame" x="42" y="271" width="330" height="330"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nzR-qh-vY2"/>
                         <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                         <constraints>
                             <constraint firstItem="mYs-TU-2PF" firstAttribute="centerX" secondItem="6ra-hV-VzB" secondAttribute="centerX" id="5I9-5k-jDU"/>
+                            <constraint firstItem="6ra-hV-VzB" firstAttribute="top" secondItem="yn9-qC-2yM" secondAttribute="bottom" constant="70" id="5zy-J4-tEy"/>
                             <constraint firstItem="nzR-qh-vY2" firstAttribute="bottom" secondItem="6ra-hV-VzB" secondAttribute="bottom" constant="56" id="7PM-8f-DcX"/>
                             <constraint firstItem="6ra-hV-VzB" firstAttribute="leading" secondItem="nzR-qh-vY2" secondAttribute="leading" constant="77" id="9tS-2d-rSn"/>
                             <constraint firstItem="gbQ-ca-L0P" firstAttribute="top" secondItem="nzR-qh-vY2" secondAttribute="top" constant="47" id="A0c-ir-Vpo"/>
                             <constraint firstItem="mYs-TU-2PF" firstAttribute="leading" secondItem="nzR-qh-vY2" secondAttribute="leading" constant="87" id="Ib8-hj-FAs"/>
+                            <constraint firstItem="sLa-4x-Q7g" firstAttribute="top" secondItem="nzR-qh-vY2" secondAttribute="top" constant="227" id="JTd-yG-kZx"/>
                             <constraint firstItem="gbQ-ca-L0P" firstAttribute="leading" secondItem="nzR-qh-vY2" secondAttribute="leading" constant="152" id="OtC-jF-U9s"/>
+                            <constraint firstItem="nzR-qh-vY2" firstAttribute="trailing" secondItem="sLa-4x-Q7g" secondAttribute="trailing" constant="42" id="Owj-qt-cyG"/>
+                            <constraint firstItem="yn9-qC-2yM" firstAttribute="centerX" secondItem="6ra-hV-VzB" secondAttribute="centerX" id="Pce-GR-jiV"/>
                             <constraint firstItem="gbQ-ca-L0P" firstAttribute="centerX" secondItem="hX0-GH-g4J" secondAttribute="centerX" id="Q3M-ro-GxC"/>
+                            <constraint firstItem="nzR-qh-vY2" firstAttribute="bottom" secondItem="sLa-4x-Q7g" secondAttribute="bottom" constant="261" id="TMI-OD-gTu"/>
                             <constraint firstItem="gbQ-ca-L0P" firstAttribute="centerX" secondItem="mYs-TU-2PF" secondAttribute="centerX" id="XtU-s0-Kxt"/>
+                            <constraint firstItem="sLa-4x-Q7g" firstAttribute="leading" secondItem="nzR-qh-vY2" secondAttribute="leading" constant="42" id="efx-eV-w7j"/>
                             <constraint firstItem="mYs-TU-2PF" firstAttribute="top" secondItem="hX0-GH-g4J" secondAttribute="top" constant="328" id="iGA-Kp-Xat"/>
+                            <constraint firstItem="yn9-qC-2yM" firstAttribute="leading" secondItem="nzR-qh-vY2" secondAttribute="leading" constant="83" id="khR-mH-pUV"/>
                             <constraint firstItem="mYs-TU-2PF" firstAttribute="centerY" secondItem="hX0-GH-g4J" secondAttribute="centerY" id="lGY-y2-d0M"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="buttonBackOutlet" destination="gbQ-ca-L0P" id="rre-aY-kwg"/>
+                        <outlet property="imageOUtlet" destination="sLa-4x-Q7g" id="f74-QV-jEb"/>
                         <outlet property="pickerColor" destination="U1d-Sf-ezN" id="8I3-5N-rqU"/>
+                        <outlet property="segCont" destination="6ra-hV-VzB" id="z9p-QS-Dhw"/>
+                        <outlet property="sliderOutlet" destination="yn9-qC-2yM" id="bXR-EJ-9NI"/>
                         <outlet property="viewColorOutlet" destination="mYs-TU-2PF" id="3cA-Jc-M9H"/>
                     </connections>
                 </viewController>
@@ -254,6 +276,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="swift" width="1240" height="580"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
