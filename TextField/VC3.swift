@@ -32,8 +32,14 @@ class VC3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         imageOUtlet.image = UIImage(named: "swift")
         view.addSubview(imageOUtlet)
         
+        sliderOutlet.minimumValue = 1
+        sliderOutlet.maximumValue = 10
+        sliderOutlet.value = 10
+        
+        
     }
     @IBAction func sliderAction(_ sender: UISlider) {
+        
     }
     
     @IBAction func buttonBackAction(_ sender: UIButton) {
