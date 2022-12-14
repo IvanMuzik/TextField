@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="vuL-uH-cTH">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xdF-bg-jNp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
@@ -55,7 +55,7 @@
                     <connections>
                         <outlet property="loginTextfield" destination="zWC-ED-OFr" id="Ben-uQ-Ms6"/>
                         <outlet property="passwordTextField" destination="rjM-R8-Ogv" id="TLO-bJ-1TA"/>
-                        <segue destination="vuL-uH-cTH" kind="show" identifier="add" id="qYe-eB-ntU"/>
+                        <segue destination="vuL-uH-cTH" kind="show" identifier="VC2" id="qYe-eB-ntU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -156,7 +156,7 @@
                         <outlet property="nameTextField" destination="8a8-XO-rIN" id="adJ-Z7-rpb"/>
                         <outlet property="numTelTextField" destination="dXe-WT-Wz2" id="3sL-RN-uma"/>
                         <outlet property="onOffButtonOutlet" destination="ixt-QI-vdI" id="yup-dq-3dO"/>
-                        <segue destination="zle-py-eQh" kind="showDetail" id="Z8N-MR-puN"/>
+                        <segue destination="zle-py-eQh" kind="showDetail" identifier="VC3" id="Z8N-MR-puN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Fg-gb-NKj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -208,7 +208,7 @@
                                     <action selector="buttonBackAction:" destination="zle-py-eQh" eventType="touchUpInside" id="fvf-hW-fj8"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yn9-qC-2yM">
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="yn9-qC-2yM">
                                 <rect key="frame" x="81" y="677" width="252" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="fI6-d4-j3U"/>
@@ -243,6 +243,7 @@
                             <constraint firstItem="mYs-TU-2PF" firstAttribute="centerY" secondItem="hX0-GH-g4J" secondAttribute="centerY" id="lGY-y2-d0M"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ll0-Lx-LMs"/>
                     <connections>
                         <outlet property="buttonBackOutlet" destination="gbQ-ca-L0P" id="rre-aY-kwg"/>
                         <outlet property="imageOUtlet" destination="sLa-4x-Q7g" id="f74-QV-jEb"/>

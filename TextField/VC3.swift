@@ -8,8 +8,6 @@
 import UIKit
 
 class VC3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
-   
-    
 
     @IBOutlet weak var imageOUtlet: UIImageView!
     @IBOutlet weak var sliderOutlet: UISlider!
@@ -18,8 +16,8 @@ class VC3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     @IBOutlet weak var viewColorOutlet: UIView!
     @IBOutlet weak var segCont: UISegmentedControl!
     
+    let size: CGFloat = 250
     let colorView: [(String, UIColor)] = [("Red",UIColor.red), ("Blue", .blue), ("Green", .green), ("Gray", .gray)]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,13 +30,9 @@ class VC3: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
         imageOUtlet.image = UIImage(named: "swift")
         view.addSubview(imageOUtlet)
         
-        sliderOutlet.minimumValue = 1
-        sliderOutlet.maximumValue = 10
-        sliderOutlet.value = 10
-        
-        
     }
     @IBAction func sliderAction(_ sender: UISlider) {
+        view.alpha = CGFloat(sender.value)
         
     }
     
